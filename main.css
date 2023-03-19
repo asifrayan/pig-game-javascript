@@ -1,0 +1,277 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  background: linear-gradient(to top left, #753682, #bf2e34);
+  font-family: 'Nunito', sans-serif;
+  height: 100vh;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.main {
+  max-width: 102.4rem;
+  width: 90%;
+  height: 60rem;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.35);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 3rem 5rem rgb(0, 0, 0, 0.25);
+}
+
+.section {
+  padding: 8rem 6rem;
+  flex: 0 0 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.total-score-container {
+  text-align: center;
+  margin-top: 2.4rem;
+}
+
+.player-title {
+  font-weight: 400;
+  font-size: 4rem;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  letter-spacing: 1px;
+}
+
+.player-0-total-score,
+.player-1-total-score {
+  color: #c7365f;
+  font-size: 8rem;
+}
+
+.current-score-container {
+  background-color: #c7365f;
+  text-align: center;
+  width: 55%;
+  padding: 1.6rem;
+  border-radius: 10px;
+  align-self: center;
+}
+.current-label {
+  color: #ddd;
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.8rem;
+  font-weight: 300;
+}
+
+.player-0-current-score,
+.player-1-current-score {
+  color: #fff;
+  font-size: 3.5rem;
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.active .player-title {
+  font-weight: 700;
+}
+
+.btn {
+  position: absolute;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  font-size: 2rem;
+  color: #444;
+  display: inline-block;
+  border-radius: 100px;
+  font-family: inherit;
+  left: 50%;
+  z-index: 10;
+  cursor: pointer;
+  transform: translateX(-50%) translateY(-2px);
+  transition: all 0.2s;
+}
+
+.btn:active {
+  transform: translateX(-50%) translateY(0px);
+}
+
+.btn-new {
+  top: 3.5rem;
+  padding: 1rem 2.5rem;
+}
+
+.btn-roll {
+  bottom: 14rem;
+  padding: 1rem 2rem;
+}
+
+.btn-hold {
+  bottom: 8rem;
+  padding: 1rem 1.5rem;
+}
+
+.dice-img {
+  position: absolute;
+  height: 10rem;
+  top: 22rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2rem 5rem rgb(0, 0, 0, 0.2);
+  display: none;
+}
+
+.winner {
+  background-color: #333;
+  color: #c7365f;
+}
+
+.info {
+  position: absolute;
+  right: 8rem;
+  top: 4rem;
+  font-size: 3.5rem;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s;
+}
+
+.info:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/*
+============
+Modal
+============
+*/
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.6);
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  opacity: 0;
+  transition: all 0.2s;
+}
+
+.show-modal {
+  display: flex;
+  opacity: 1;
+}
+
+.instructions-container {
+  background-color: #f9f5f4;
+  max-width: 80rem;
+  border-radius: 10px;
+  position: relative;
+  color: #2b2a2c;
+  box-shadow: 0 2rem 5rem rgb(0, 0, 0, 0.2);
+}
+
+.title-container {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.title-container h2 {
+  font-size: 3.2rem;
+  margin-bottom: 0.8rem;
+  color: #2b2a2c;
+}
+
+.underline {
+  width: 4rem;
+  margin: 0 auto;
+  border: 2px solid #ff542b;
+  border-radius: 100px;
+}
+
+.instructions li {
+  font-size: 1.6rem;
+  color: #2b2a2c;
+  font-weight: 700;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+  padding-left: 0.8rem;
+  margin-left: 2rem;
+}
+
+.instructions {
+  width: 75%;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+
+.close {
+  position: absolute;
+  right: 3rem;
+  top: 1rem;
+  font-size: 2.7rem;
+  cursor: pointer;
+}
+
+/* Media Query */
+@media screen and (max-width: 768px) {
+  .player-title {
+    font-size: 2.2rem;
+  }
+
+  .player-0-total-score,
+  .player-1-total-score {
+    color: #c7365f;
+    font-size: 7rem;
+  }
+
+  .current-score-container {
+    width: 95%;
+  }
+
+  .current-label {
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1.6rem;
+  }
+
+  .btn-roll,
+  .btn-hold {
+    padding: 0.8rem;
+    font-size: 1.4rem;
+  }
+
+  .info {
+    right: 2.2rem;
+    top: 4rem;
+    font-size: 3.5rem;
+  }
+
+  .dice-img {
+    height: 9rem;
+  }
+}

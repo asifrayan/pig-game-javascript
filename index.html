@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pig game</title>
+    <link rel="icon" href="./logo.png" type="image/png" />
+    <!-- font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <span class="info"><i class="fa-solid fa-circle-info"></i></span>
+
+    <!-- overlay -->
+    <div class="overlay">
+      <div class="instructions-container">
+        <span class="close"><i class="fa-sharp fa-solid fa-xmark"></i></span>
+        <div class="title-container">
+          <h2>How to play</h2>
+          <div class="underline"></div>
+        </div>
+        <div class="instructions">
+          <ol>
+            <li>The game begins with "Player 1" as the active player.</li>
+            <li>
+              Tap the "ROLL DICE" button to begin rolling the dice. The number
+              shown on the dice will be added to the current score of the active
+              player.
+            </li>
+            <li>
+              If the dice lands on "1," the current score is reset to 0 and the
+              second player is given the opportunity to play.
+            </li>
+            <li>
+              If you believe that rolling the dice again will result in a "1,"
+              tap the "Hold" button, and your current score will be added to the
+              total score.
+            </li>
+            <li>The game is won by the first player to reach "100."</li>
+            <li>To begin a new game, click on the "NEW GAME" button.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!-- end of overlay -->
+
+    <main class="main">
+      <!-- section -->
+      <section class="section section-0 active">
+        <div class="total-score-container">
+          <h2 class="player-title">Player 1</h2>
+          <p class="player-0-total-score">0</p>
+        </div>
+        <div class="current-score-container">
+          <p class="current-label">Current</p>
+          <p class="player-0-current-score">0</p>
+        </div>
+      </section>
+      <!-- end of section -->
+
+      <!-- section -->
+      <section class="section section-1">
+        <div class="total-score-container">
+          <h2 class="player-title">Player 2</h2>
+          <p class="player-1-total-score">0</p>
+        </div>
+        <div class="current-score-container">
+          <p class="current-label">Current</p>
+          <p class="player-1-current-score">0</p>
+        </div>
+      </section>
+      <!-- end of section -->
+
+      <!-- buttons -->
+      <button class="btn btn-new">🔄 New game</button>
+      <button class="btn btn-roll">🎲 Roll dice</button>
+      <button class="btn btn-hold">🤚 Hold</button>
+
+      <!-- dice image -->
+      <img src="./images/dice-1.png" alt="dice" class="dice-img" />
+    </main>
+    <!-- script -->
+    <script src="./app.js"></script>
+  </body>
+</html>
